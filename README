@@ -1,0 +1,35 @@
+NAME: Christopher Ngai
+EMAIL: cngai1223@gmail.com
+ID: 404795904
+
+********************
+* CONTENTS OF FILE *
+********************
+
+lab4c_tcp.c:
+	lab4c_tcp.c is a C source program that builds and runs on the Beaglebone. The program uses a temperature sensor to report the temperature at given times based on a
+	specified period duration and scale option. Additionally, the program takes in a 9-digit ID number, a host name, and a port number. It essentially does the same
+	thing as the program for Lab 4B, but this time, instead of processing commands from STDIN, it processes commands and reports the processed commands from and to a
+	network connection to a server by establishing a TCP connection via TCP sockets.
+
+lab4c_tls.c:
+	lab4c_tls.c is a C source program that builds and runs on the Beaglebone. The program has the same functionalities as lab4c_tcp.c but instead of using TCP connection,
+	it communicates with the server via a TLS connection. It opens a TLS connection to the server given a specified address and port number, then sends reports over the
+	connection to the server.
+
+Makefile:
+	Makefile is a file that builds and tests my applications with the following targets: default, clean, and dist. The default target builds both versions of my program,
+	the lab4c_tcp executable and the lab4c_tls executable. The clean target deletes all the files and output created by the Makefile. The dist target creates the
+	tarball which includes both executables, the README, and the Makefile.
+
+*********************
+* OTHER INFORMATION *
+*********************
+
+OpenSSL Library Manual:
+	https://www.openssl.org/docs/manmaster/man7/ssl.html
+
+	This website helped me understand how to establish TLS connections with various methods that are included in the OpenSSL library. I learned how to use the SSL_CTX_new()
+	method to create an SSL_CTX object, the SSL_set_fd() method to connect the SSL object with a specified file descriptor, the SSL_connect() method to initiate the TLS
+	handshake and exchange important information with a TLS server, the SSL_read() and SSL_write() methods to read and write bytes from/to the SSL object to/from a character
+	buffer, and the SSL_shutdown() method to shut down a TLS connection.
